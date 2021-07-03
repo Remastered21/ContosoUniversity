@@ -144,3 +144,9 @@ C:\Users\mykim\source\repos\ContosoUniversity\ContosoUniversity\ContosoUniversit
 C:\Users\mykim\source\repos\ContosoUniversity\ContosoUniversity\ContosoUniversity\obj\Debug\net5.0\ref\ContosoUniversity.dll
 C:\Users\mykim\source\repos\ContosoUniversity\ContosoUniversity\ContosoUniversity\obj\Debug\net5.0\ContosoUniversity.pdb
 C:\Users\mykim\source\repos\ContosoUniversity\ContosoUniversity\ContosoUniversity\obj\Debug\net5.0\ContosoUniversity.genruntimeconfig.cache
+C:\Users\mykim\source\repos\ContosoUniversity\ContosoUniversity\ContosoUniversity\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\mykim\source\repos\ContosoUniversity\ContosoUniversity\ContosoUniversity\obj\Debug\net5.0\Razor\Pages\Students\Create.cshtml.g.cs
+C:\Users\mykim\source\repos\ContosoUniversity\ContosoUniversity\ContosoUniversity\obj\Debug\net5.0\Razor\Pages\Students\Delete.cshtml.g.cs
+C:\Users\mykim\source\repos\ContosoUniversity\ContosoUniversity\ContosoUniversity\obj\Debug\net5.0\Razor\Pages\Students\Details.cshtml.g.cs
+C:\Users\mykim\source\repos\ContosoUniversity\ContosoUniversity\ContosoUniversity\obj\Debug\net5.0\Razor\Pages\Students\Edit.cshtml.g.cs
+C:\Users\mykim\source\repos\ContosoUniversity\ContosoUniversity\ContosoUniversity\obj\Debug\net5.0\Razor\Pages\Students\Index.cshtml.g.cs

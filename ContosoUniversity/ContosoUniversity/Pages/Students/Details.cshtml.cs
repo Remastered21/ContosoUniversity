@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ContosoUniversity.Data;
 using ContosoUniversity.Models;
 
-namespace ContosoUniversity
+namespace ContosoUniversity.Pages.Students
 {
     public class DetailsModel : PageModel
     {
@@ -21,6 +21,16 @@ namespace ContosoUniversity
 
         public Student Student { get; set; }
 
+        /* 
+            Some explanations regarding async
+            To make a code execute asyncronously you need:
+            1. "Task" return value
+            2. "await" keyword
+            3. "ToListAsync" method
+            
+            refer to https://docs.microsoft.com/en-us/aspnet/core/data/ef-rp/intro?view=aspnetcore-5.0&tabs=visual-studio#asynchronous-code
+            on how the async method works
+        */
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -28,7 +38,7 @@ namespace ContosoUniversity
                 return NotFound();
             }
 
-            Student = await _context.Student.FirstOrDefaultAsync(m => m.ID == id);
+            Student = await _context.Students.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Student == null)
             {
