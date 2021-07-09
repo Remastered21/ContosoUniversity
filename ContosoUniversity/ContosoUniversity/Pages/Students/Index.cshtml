@@ -9,13 +9,25 @@
 <p>
  <a asp-page="Create">Create New</a>
 </p>
+
+<form asp-page="./Index" method="get">
+ <div class="form-actions no-color">
+  <p>
+   Find by name:
+   <input type="text" name="searchString" value="@Model.CurrentFilter" />
+   <input type="submit" value="Search" class="btn btn-primary" />
+   <a asp-page="./Index">Back to full List</a>
+  </p>
+ </div>
+</form>
 <table class="table">
  <thead>
   <tr>
    <th>
-	<a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"> @* Anchor tag: asp-route-`name-of-query-string`
-																	this will become ?name-of-query-string="whatever the value is"*@
-					@Html.DisplayNameFor(model => model.Students[0].LastName) 
+	<a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+					@* Anchor tag: asp-route-`name-of-query-string`
+						this will become ?name-of-query-string="whatever the value is"*@
+					@Html.DisplayNameFor(model => model.Students[0].LastName)
 	</a>
    </th>
    <th>
