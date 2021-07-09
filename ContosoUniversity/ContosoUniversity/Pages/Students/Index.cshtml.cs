@@ -14,7 +14,7 @@ namespace ContosoUniversity.Pages.Students
     public class IndexModel : PageModel
     {
         private readonly SchoolContext _context;
-        public IndexModel(SchoolContext context)
+        public IndexModel(SchoolContext context) // index model
         {
             _context = context;
         }

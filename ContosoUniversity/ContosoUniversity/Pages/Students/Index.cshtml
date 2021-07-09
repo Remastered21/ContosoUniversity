@@ -13,7 +13,8 @@
  <thead>
   <tr>
    <th>
-	<a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+	<a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"> @* Anchor tag: asp-route-`name-of-query-string`
+																	this will become ?name-of-query-string="whatever the value is"*@
 					@Html.DisplayNameFor(model => model.Students[0].LastName) 
 	</a>
    </th>
