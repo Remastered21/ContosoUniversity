@@ -51,23 +51,14 @@ namespace ContosoUniversity.Pages.Students
 										|| s.FirstMidName.Contains(searchString));
 			}
 
-			switch (sortOrder)
+			studentsIQ = sortOrder switch
 			{
 				// Sort by whichever condition it was given
-				case "name_desc":
-					studentsIQ = studentsIQ.OrderByDescending(s => s.LastName); // _desc to specify descending order
-					break;
-				case "Date":
-					studentsIQ = studentsIQ.OrderBy(s => s.EnrollmentDate);
-					break;
-				case "date_desc":
-					studentsIQ = studentsIQ.OrderByDescending(s => s.EnrollmentDate);
-					break;
-				default:
-					studentsIQ = studentsIQ.OrderBy(s => s.LastName);
-					break;
-			}
-
+				"name_desc" => studentsIQ.OrderByDescending(s => s.LastName),// _desc to specify descending order
+				"Date" => studentsIQ.OrderBy(s => s.EnrollmentDate),
+				"date_desc" => studentsIQ.OrderByDescending(s => s.EnrollmentDate),
+				_ => studentsIQ.OrderBy(s => s.LastName),
+			};
 			Students = await studentsIQ.AsNoTracking().ToListAsync();
 		}
 	}
