@@ -68,6 +68,7 @@
  </tbody>
 </table>
 
+@* Addes disabled property to the button when there's no previous or next page' *@
 @{
     var prevDisabled = !Model.Students.HasPreviousPage ? "disabled" : "";
     var nextDisabled = !Model.Students.HasNextPage ? "disabled" : "";
