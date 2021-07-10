@@ -11,6 +11,8 @@
 </p>
 
 <form asp-page="./Index" method="get">
+	@* Form tag helper passes parameter through HTTP message body and not in the URL. We use GET here instead of POST.
+		When HTTP GET is used, form data is passed in the URL as query string*@
  <div class="form-actions no-color">
   <p>
    Find by name:
@@ -24,9 +26,10 @@
  <thead>
   <tr>
    <th>
-	<a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+	<a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
+				   asp-route-currentFilter="@Model.CurrentFilter">
 					@* Anchor tag: asp-route-`name-of-query-string`
-						this will become ?name-of-query-string="whatever the value is"*@
+						URL will be ?name-of-query-string="whatever the value is"*@
 					@Html.DisplayNameFor(model => model.Students[0].LastName)
 	</a>
    </th>
@@ -34,7 +37,8 @@
 				@Html.DisplayNameFor(model => model.Students[0].FirstMidName)
    </th>
    <th>
-	<a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+	<a asp-page="./Index" asp-route-sortOrder="@Model.DateSort"
+				   asp-route-currentFilter="@Model.CurrentFilter">
 					@Html.DisplayNameFor(model => model.Students[0].EnrollmentDate)
 	</a>
    </th>
@@ -63,3 +67,23 @@
 		}
  </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.Students.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Students.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.Students.PageIndex - 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.Students.PageIndex + 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>
